@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guess number</title>
+</head>
+<body>
+    <h1>Godnatt</h1>
+
+    <script>
+        let num = 5;
+        let guess = 0;
+        while(guess != num) {
+            guess = prompt("Guess number lol: ");
+            if (guess == num){
+                alert("good job")
+            } else if (guess > num) {
+                alert("too high")
+            } else if (guess < num) {
+                alert("too low")
+            } else {
+                alert("error:404")
+            }
+        } 
+    </script>
+</body>
+</html>
