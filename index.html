@@ -6,24 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>guess number</title>
 </head>
+
 <body>
     <h1>Eat up</h1>
     <img src="ettkylskåp.png" alt="kylskåp">
+    <p></p>
+    <input type="text" name="guess">
+    <p></p>
+
     <script>
-        let num = 5;
-        let guess = 0;
-        while(guess != num) {
-            guess = prompt("Guess number lol: ");
-            if (guess == num){
-                alert("good job")
-            } else if (guess > num) {
-                alert("too high")
-            } else if (guess < num) {
-                alert("too low")
+        let num = Math.round(Math.random() * 10);
+        let el = document.querySelector('input');
+        let p = document.querySelector('p');
+        let guesses = 0;
+
+        el.addEventListener('change', function() {
+            guesses +=1;
+            
+            if (el.value == num){
+                p.textContent = 'good job ' + guesses + ' guesses'
+            } else if (el.value > num) {
+                p.textContent = 'too high';
+            } else if (el.value < num) {
+                p.textContent = 'too low';
             } else {
-                alert("error:404")
+                p.textContent = 'error404';
             }
-        } 
+        });
     </script>
 </body>
 </html>
